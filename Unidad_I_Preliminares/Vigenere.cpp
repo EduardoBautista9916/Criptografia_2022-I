@@ -9,7 +9,7 @@ const int alfabeto = 27;
 void genMat(char may[alfabeto][alfabeto], char min[alfabeto][alfabeto]);
 bool isMin(char c);
 bool isMay(char c);
-int encriptar(int clave, int text,char may[alfabeto][alfabeto],char min[alfabeto][alfabeto]);
+int encriptar(char clave, char text,char may[alfabeto][alfabeto],char min[alfabeto][alfabeto]);
 
 int main(){
     char may[alfabeto][alfabeto], min[alfabeto][alfabeto];
@@ -23,8 +23,9 @@ int main(){
     int i=0, lon = strlen(clave)-1;
     
     while(texto[i] != '\0'){
+        cout << texto[i] << endl;
         int posClave = i%lon;
-        textEncrip = encriptar(clave[posClave], texto[i],may,min);
+        textEncrip[i] = encriptar(clave[posClave], texto[i],may,min);
         i++;
     }
     textEncrip[i]=texto[i];
@@ -63,7 +64,7 @@ bool isMay(char c){
     }
 }
 
-int encriptar(int clave, int text,char may[alfabeto][alfabeto],char min[alfabeto][alfabeto]){
+int encriptar(char clave, char text,char may[alfabeto][alfabeto],char min[alfabeto][alfabeto]){
     if(isMin(clave)){
         clave-=65;
     }
@@ -71,7 +72,7 @@ int encriptar(int clave, int text,char may[alfabeto][alfabeto],char min[alfabeto
         clave-=97;
     }
     else if(clave==32){
-        clave=27;
+        clave=26;
     }
     if(isMin(text)){
         text-=65;
@@ -82,7 +83,7 @@ int encriptar(int clave, int text,char may[alfabeto][alfabeto],char min[alfabeto
         return may[clave][text];
     }
     else if(text==32){
-        text=27;
+        text=26;
         return may[clave][text];
     }
 }
