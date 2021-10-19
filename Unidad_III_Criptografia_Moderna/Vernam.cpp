@@ -1,9 +1,6 @@
 #include <iostream>
-//#include <stdio.h>
-//#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-//#include <string.h>
 #include <string>
 
 using namespace std;
@@ -78,12 +75,12 @@ int main(){
             printf("= %d\n", var_xor);
         }
         i++;
-        cout << endl;
-        system("pause");
     }
+    cout << endl;
+    system("pause");
     
     //Mostramos el texto cifrado
-    cout << "El mensaje encriptado queda como: " << encriptado << endl;
+    cout << "\n\nEl mensaje encriptado queda como: " << encriptado << endl;
     cout << endl;
     system("pause");
 
@@ -116,12 +113,12 @@ int main(){
             printf("= %d\n", var_xor);
         }
         i++;
-        cout << endl;
-        system("pause");
     }
+    cout << endl;
+    system("pause");
     
     //Mostramos el texto cifrado
-    cout << "El mensaje Desencriptado queda como: " << desencriptado << endl;
+    cout << "\n\nEl mensaje Desencriptado queda como: " << desencriptado << endl;
     cout << endl;
     system("pause");
     
